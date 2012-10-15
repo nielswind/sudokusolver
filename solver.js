@@ -104,6 +104,27 @@ function checkAllSolved() {
     return res.length == 0 ? 'All solved!' : res.length + " not solved .. :(";
 }
 
+function printSolvedBoard() {
+    for (row=0; row<9; row++)  {
+        var line = "";
+        for (column=0; column<9; column++) {
+            var cell = board[row][column];
+            if (cell.solved) {
+                line = line + cell.cell + " ";
+            } else {
+                line = line + "  ";
+            }
+            if (cell.column == 2 || cell.column == 5) {
+                line = line + " ";
+            }
+        }
+        console.log(line);
+        if (cell.row == 2 || cell.row == 5) {
+            console.log(' ');
+        }
+    }
+}
+
 
 // setup start board
 // sq 0
@@ -156,6 +177,8 @@ setValue(5,8, 4);
 setValue(6,8, 3);
 setValue(8,7, 9);
 
+printSolvedBoard();
+
 // solve
 
 function cellFormatter(cell) {
@@ -178,3 +201,5 @@ while (true) {
 
 console.log(checkAllSolved());
 //console.log(board);
+
+printSolvedBoard();
