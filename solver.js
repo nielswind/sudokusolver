@@ -112,6 +112,33 @@ setValue(6,0, 1);
 setValue(6,1, 6);
 setValue(8,2, 4);
 
+// sq 2
+setValue(4,1, 9);
+
+// sq 4
+setValue(4,4, 4);
+setValue(4,5, 6);
+setValue(5,4, 2);
+
+// sq 7
+setValue(8,7, 7);
+
+// sq 2
+setValue(1,6, 1);
+setValue(1,8, 7);
+
+// sq 5
+setValue(3,8, 6);
+setValue(4,6, 3);
+setValue(4,7, 8);
+setValue(4,8, 1);
+setValue(5,7, 7);
+setValue(5,8, 4);
+
+// sq 8
+setValue(6,8, 3);
+setValue(8,7, 9);
+
 // solve
 console.log(findForSure());
 
