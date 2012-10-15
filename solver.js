@@ -123,6 +123,11 @@ function printSolvedBoard() {
     }
 }
 
+function cellFormatter(cell) {
+    return ""+cell.row+","+cell.column+":"+cell.cell;
+}
+
+var start = Date.now();
 
 // setup start board
 // sq 0
@@ -175,17 +180,13 @@ setValue(5,8, 4);
 setValue(6,8, 3);
 setValue(8,7, 9);
 
-printSolvedBoard();
+//printSolvedBoard();
 
 // solve
 
-function cellFormatter(cell) {
-    return ""+cell.row+","+cell.column+":"+cell.cell;
-}
-
 while (true) {
     var nexts = findForSure();
-    console.log('next = ', _.map(nexts, cellFormatter));
+    //console.log('next = ', _.map(nexts, cellFormatter));
 
     if (nexts.length==0) break;
 
@@ -196,8 +197,9 @@ while (true) {
         setValue(c.row, c.column, c.cell[0]);
     }
 }
+var stop = Date.now();
 
-console.log(checkAllSolved());
+console.log(stop-start+" ms",checkAllSolved());
 //console.log(board);
 
 printSolvedBoard();
