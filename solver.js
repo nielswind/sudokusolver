@@ -58,7 +58,7 @@ for (row = 0; row <9; row++) {
 //console.log(board);
 
 function removeValueFromCells(value, arrayOfCells) {
-    for (i=0; i<9; i++) {
+    for (var i=0; i<9; i++) {
         arrayOfCells[i].cell.remove(value);
         //console.log(i,arrayOfCells[i].cell);
     }
@@ -130,15 +130,15 @@ setValue(6,1, 6);
 setValue(8,2, 4);
 
 // sq 2
-setValue(4,1, 9);
+setValue(1,4, 9);
 
 // sq 4
-setValue(4,4, 4);
-setValue(4,5, 6);
-setValue(5,4, 2);
+setValue(4,3, 4);
+setValue(4,4, 6);
+setValue(5,3, 2);
 
 // sq 7
-setValue(8,7, 7);
+setValue(8,4, 7);
 
 // sq 2
 setValue(1,6, 1);
@@ -168,13 +168,13 @@ while (true) {
 
     if (nexts.length==0) break;
 
-    for (i=0; i<nexts.length; i++) {
+    for (var i=0; i<nexts.length; i++) {
+//        console.log(i);
         var c = nexts[i];
+ //       console.log(i, nexts.length,'setValue('+c.row+','+c.column+', '+c.cell[0]+');');
         setValue(c.row, c.column, c.cell[0]);
     }
 }
-
-console.log(findForSure());
 
 console.log(checkAllSolved());
 //console.log(board);
