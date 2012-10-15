@@ -88,6 +88,20 @@ function findForSure() {
     return res;
 }
 
+function checkAllSolved() {
+    var res = [];
+    for (row=0; row<9; row++)  {
+        for (column=0; column<9; column++) {
+            var cell = board[row][column];
+            if (!cell.solved) {
+                res.push(cell);
+            }
+        }
+    }
+    return res.length == 0 ? 'All solved!' : res.length + " not solved .. :(";
+}
+
+
 // setup start board
 // sq 0
 setValue(0,0, 4);
@@ -140,6 +154,19 @@ setValue(6,8, 3);
 setValue(8,7, 9);
 
 // solve
+
+while (true) {
+    var nexts = findForSure();
+
+    if (nexts.length==0) break;
+
+    for (i=0; i<nexts.length; i++) {
+        var c = nexts[i];
+        setValue(c.row, c.column, c.cell[0]);
+    }
+}
+
 console.log(findForSure());
 
+console.log(checkAllSolved());
 //console.log(board);
