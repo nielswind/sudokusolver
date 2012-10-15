@@ -1,9 +1,7 @@
 /**
- * Created with JetBrains RubyMine.
  * User: nhwind
  * Date: 15/10/12
  * Time: 09.43
- * To change this template use File | Settings | File Templates.
  */
 
 // Find THE solution of a sudoku square, fast.
