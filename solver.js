@@ -9,12 +9,14 @@
 // Find THE solution of a sudoku square, fast.
 // Deterministic
 
+var _ = require('underscore');
+
 Array.prototype.remove = function(val) {
     var indexOf = this.indexOf(val);
     if (indexOf>=0) {
         this.splice(indexOf,1);
     }
-}
+};
 
 function notFilled() {
     return [ 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -156,9 +158,13 @@ setValue(8,7, 9);
 
 // solve
 
+function cellFormatter(cell) {
+    return ""+cell.row+","+cell.column+":"+cell.cell;
+}
+
 while (true) {
     var nexts = findForSure();
-    console.log('next = ', nexts);
+    console.log('next = ', _.map(nexts, cellFormatter));
 
     if (nexts.length==0) break;
 
