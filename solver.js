@@ -95,6 +95,7 @@ function checkAllSolved() {
             var cell = board[row][column];
             if (!cell.solved) {
                 res.push(cell);
+                console.log(cell);
             }
         }
     }
@@ -157,6 +158,7 @@ setValue(8,7, 9);
 
 while (true) {
     var nexts = findForSure();
+    console.log('next = ', nexts);
 
     if (nexts.length==0) break;
 
