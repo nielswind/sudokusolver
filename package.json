@@ -1,11 +1,11 @@
 {
-    "name": "sudokuSolver",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node solver"
-    },
-    "dependencies": {
-        "underscore": "*"
-    }
+  "name": "sudokuSolver",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node solver"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2"
+  }
 }
